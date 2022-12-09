@@ -4,6 +4,11 @@
 ```shell
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -ldflags '-w -extldflags "-static"' -o bin/get-nodeid main.go
 ```
+## Generate cert/key pair
+```shell
+./bin/get-nodeid --generate --key 1.key --cert 1.crt
+```
+
 ## Test
 * generate test staking cert
 ```shell
@@ -13,7 +18,4 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -ldflags '-w -extl
 ```shell
 ./bin/get-nodeid -key=./test/staking.key -cert=./test/staking.crt
 ```
-or generate 
-```shell
-./bin/get-nodeid --generate --key 1.key --cert 1.crt
-```
+
